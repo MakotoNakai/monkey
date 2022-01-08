@@ -7,7 +7,7 @@ import (
 )
 
 func TestNextToken(t *testing.T) {
-	input := `=+(){},;`
+	input := "=+(){},;"
 
 	tests := []struct {
 		expectedType    token.TokenType
@@ -24,7 +24,7 @@ func TestNextToken(t *testing.T) {
 		{token.EOF, ""},
 	}
 
-	l := (input)
+	l := New(input)
 	for i, tt := range tests {
 		tok := l.NextToken()
 
